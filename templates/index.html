@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% load static %}
 
-</body>
-</html>
+{% block content %}
+{% for x in clothes %}
+<p>{{ x.name }}</p>
+{% endfor %}
+{% for x in food %}
+<p>{{ x.name }}</p>
+{% endfor %}
+{% endblock %}
