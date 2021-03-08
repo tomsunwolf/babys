@@ -26,7 +26,8 @@ class CommodityInfos(models.Model):
     sold = models.IntegerField('已售数量')
     likes = models.IntegerField('收藏数量')
     created = models.DateField('上架日期', auto_now_add=True)
-    img = models.FileField('商品主图', upload_to=r'imgs')
+    # img = models.FileField('商品主图', upload_to=r'imgs')
+    img = models.ImageField('商品主图',upload_to='imgs')
     details = models.FileField('商品介绍', upload_to=r'details')
 
     def __str__(self):
