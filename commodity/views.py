@@ -11,10 +11,10 @@ def commodityView(request):
     firsts = Types.objects.values('firsts').distinct()
     typeList = Types.objects.all()
     # 获取请求参数
-    t = request.GET.get('t','')
-    s = request.GET.get('s','')
-    p = request.GET.get('p','')
-    n = request.GET.get('n','')
+    t = request.GET.get('t', '')
+    s = request.GET.get('s', '')
+    p = request.GET.get('p', '')
+    n = request.GET.get('n', '')
     # 根据请求参数查询商品信息
     commodityInfos = CommodityInfos.objects.all()
     if t:
@@ -32,8 +32,14 @@ def commodityView(request):
         pages = paginator.page(1)
     except EmptyPage:
         pages = paginator.page(paginator.num_pages)
-    return render(request,'commodity.html',locals())
+    return render(request, 'commodity.html', locals())
 
 
-def detailView(request):
-    return HttpResponse('detailView')
+def detailView(request, id):
+    title = '商品介绍'
+    classContent = 'details'
+    commoditys = CommodityInfos.objects.filter(id=id).first
+    items = CommodityInfos.objects.exclude(id=id).order_by('-sold')[:5]
+    likesList = request.session.get('likes', [])
+    likes = True if id in likesList else False
+    return render(request, 'details.html', locals())
