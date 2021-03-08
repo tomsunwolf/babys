@@ -1,18 +1,18 @@
-from django.shortcuts import render
+from django.shortcuts import render,HttpResponse
 
 
 # Create your views here.
 def shopperView(request):
-    pass
+    return HttpResponse('商城视图')
 
 
 def loginView(request):
-    pass
+    return HttpResponse('登录视图')
 
 
 def logoutView(request):
-    pass
+    return HttpResponse('退出视图')
 
 
 def shopcartView(request):
-    pass
+    return HttpResponse('购物车视图')

@@ -112,7 +112,7 @@ USE_TZ = True
 
 # 静态资源配置Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
-STATIC_URL = '/static/'
+STATIC_URL = '/pstatic/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'pstatic'), ]
 
 # 经常变动的资源，如用户头像、商品主图、商品详细介绍图等等，通常放在媒体media资源文件夹

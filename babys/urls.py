@@ -11,5 +11,5 @@ urlpatterns = [
     # 导向App(index)之路由
     path('', include(('index.urls', 'index'), namespace='index')),
     path('commodity', include(('commodity.urls', 'commodity'), namespace='commodity')),
-    path('shopper', include(('shopper.urls', 'shopper'), namespace='shopper'))
+    path('shopper/', include(('shopper.urls', 'shopper'), namespace='shopper'))
 ]
