@@ -25,7 +25,7 @@ def commodityView(request):
     if n:
         commodityInfos = commodityInfos.filter(name__contains=n)
     # 分页功能
-    paginator = Paginator(commodityInfos,6)
+    paginator = Paginator(commodityInfos, 6)
     try:
         pages = paginator.page(p)
     except PageNotAnInteger:
